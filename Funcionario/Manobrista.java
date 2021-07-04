@@ -8,10 +8,4 @@ public class Manobrista extends Funcionario {
             LocalDate dataVencimentoCnh) {
         super(nome, dataNascimento, cpf, numeroCnh, categoriaCnh, dataVencimentoCnh);
     }
-
-    @Override
-    public String toString() {
-        return "Manobrista []";
-    }
-    
 }

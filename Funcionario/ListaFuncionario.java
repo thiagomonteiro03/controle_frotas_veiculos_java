@@ -1,6 +1,7 @@
 package Funcionario;
 
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -76,7 +77,7 @@ public class ListaFuncionario {
                 String escolhaPassageiro = in.nextLine();
                 boolean transportaPassageiro;
                 if(escolhaPassageiro.equals("1")) transportaPassageiro = true;
-                    else if(escolhaPassageiro.equals("2")) transportaPassageiro = false;
+                    else if(escolhaPassageiro.equals("0")) transportaPassageiro = false;
                             else break;
                 transportePassageiro = transportaPassageiro;
                 Funcionario motoristaFuncionario = new Motorista(nome, dataNascimento, cpf, numeroCnh, categoriaCnh, dataVencimentoCnh, cargaPerigosa, transportaPassageiro);
@@ -86,6 +87,11 @@ public class ListaFuncionario {
             }
             default: System.out.println("Opção inválida.");
         }
+    }
+
+    public List<Funcionario> getFuncionarios(){
+        Collections.sort(funcionariosLista);
+        return funcionariosLista;
     }
 
     public Funcionario buscaFuncionario(int hashCodeCPF){

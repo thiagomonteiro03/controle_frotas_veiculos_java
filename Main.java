@@ -1,4 +1,6 @@
 import java.util.Scanner;
+
+import Funcionario.Funcionario;
 import Funcionario.ListaFuncionario;
 
 public class Main {
@@ -15,7 +17,7 @@ public class Main {
         System.out.println("Fretamentos:\n7 - Cadastrar fretamento de veículo\n8 - Listar motoristas livres\n9 - Listar veículos livres");
         System.out.println("10 - Listar histórico de fretamentos\n11 - Listar top 5 veículos mais lucrativos");
         System.out.println("99 - Para sair do programa.");
-        opcao = in.nextInt();
+        opcao = Integer.parseInt(in.nextLine());
 
         switch(opcao){
             case 1: {
@@ -23,7 +25,7 @@ public class Main {
                 break;
             }
             case 2: {
-
+                listaFuncionarios();
             }
             case 3: {
                 buscaFuncionario();
@@ -50,13 +52,18 @@ public class Main {
     public static void cadastraFuncionario(){
         System.out.println("Digite o tipo de funcionário de cadastro:");
         System.out.println("1 - Funcionário Administrativo.\n2 - Funcionário Manobrista\n3 - Funcionário Motorista");
-        int tipoFuncionario = in.nextInt();
+        int tipoFuncionario = Integer.parseInt(in.nextLine());
         funcionariosLista.cadastraFuncionario(tipoFuncionario);
 
     }
 
+    public static void listaFuncionarios(){
+        for(Funcionario funcionario: funcionariosLista.getFuncionarios()){
+            System.out.println(funcionario.toString());
+        }
+    }
+
     public static void buscaFuncionario(){
-        String lala = in.nextLine();
         System.out.println("Digite o CPF do funcionário desejado: (apenas numero)");
         String cpfFuncionario = in.nextLine();
         funcionariosLista.buscaFuncionario(cpfFuncionario.hashCode());

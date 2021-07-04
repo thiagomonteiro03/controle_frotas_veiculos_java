@@ -1,7 +1,7 @@
 package Funcionario;
 import java.time.LocalDate;
 
-public abstract class  Funcionario {
+public abstract class  Funcionario implements Comparable<Funcionario> {
 
     private String nome;
     private LocalDate dataNascimento;
@@ -77,6 +77,11 @@ public abstract class  Funcionario {
     @Override
     public int hashCode() {
         return cpf.hashCode();
+    }
+
+    @Override
+    public int compareTo(Funcionario outro){
+        return nome.compareTo(outro.getNome());
     }
 
     @Override

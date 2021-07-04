@@ -32,7 +32,7 @@ public class Motorista extends Funcionario {
 
     @Override
     public String toString() {
-        return "Motorista [cargaPerigosa=" + cargaPerigosa + ", transportePassageiro=" + transportePassageiro + "]";
+        return super.toString() + "Motorista [cargaPerigosa=" + cargaPerigosa + ", transportePassageiro=" + transportePassageiro + "]";
     }
     
 }

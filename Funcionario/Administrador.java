@@ -10,7 +10,7 @@ public class Administrador extends Funcionario {
 
     @Override
     public String toString() {
-        return "Administrador []";
+        return "Administrador [cpf=" + super.getCpf() + ", dataNascimento=" + super.getDataNascimento() + ", nome=" + super.getNome() + "]";
     }
 
 }
