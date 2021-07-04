@@ -37,6 +37,12 @@ public class TransporteCarga extends Veiculo {
         this.unidAcoplado = unidAcoplado;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + "TransporteCarga [capacidadeCarga=" + capacidadeCarga + ", numeroEixo=" + numeroEixo + ", unidAcoplado="
+                + unidAcoplado + "]";
+    }
+
     
     
 }

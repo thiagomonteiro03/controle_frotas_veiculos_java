@@ -16,5 +16,10 @@ public class TransportePassageiro extends Veiculo {
     public void setMaxPassageiro(int maxPassageiro) {
         this.maxPassageiro = maxPassageiro;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "TransportePassageiro [maxPassageiro=" + maxPassageiro + "]";
+    }
     
 }
