@@ -29,5 +29,10 @@ public class Motorista extends Funcionario {
     public void setTransportePassageiro(boolean transportePassageiro) {
         this.transportePassageiro = transportePassageiro;
     }
+
+    @Override
+    public String toString() {
+        return "Motorista [cargaPerigosa=" + cargaPerigosa + ", transportePassageiro=" + transportePassageiro + "]";
+    }
     
 }

@@ -8,4 +8,9 @@ public class Administrador extends Funcionario {
         super(nome, dataNascimento, cpf);
     }
 
+    @Override
+    public String toString() {
+        return "Administrador []";
+    }
+
 }

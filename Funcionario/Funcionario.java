@@ -1,6 +1,5 @@
 package Funcionario;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public abstract class  Funcionario {
 
@@ -78,5 +77,11 @@ public abstract class  Funcionario {
     @Override
     public int hashCode() {
         return cpf.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "Funcionario [categoriaCnh=" + categoriaCnh + ", cpf=" + cpf + ", dataNascimento=" + dataNascimento
+                + ", dataVencimentoCnh=" + dataVencimentoCnh + ", nome=" + nome + ", numeroCnh=" + numeroCnh + "]";
     }
 }
