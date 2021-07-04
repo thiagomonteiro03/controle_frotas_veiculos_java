@@ -1,8 +1,10 @@
 import java.util.Scanner;
 
+import Fretamento.Fretamento;
 import Fretamento.ListaFretamento;
 import Funcionario.Funcionario;
 import Funcionario.ListaFuncionario;
+import Funcionario.Motorista;
 import Veiculo.ListaVeiculo;
 import Veiculo.Veiculo;
 
@@ -47,8 +49,12 @@ public class Main {
             case 7: {
                 cadastraFretamento();
             }
-            case 8: {}
-            case 9: {}
+            case 8: {
+                listaMotoristasLivres();
+            }
+            case 9: {
+                listaVeiculosLivres();
+            }
             case 10: {}
             case 11: {}
             default:{
@@ -118,11 +124,17 @@ public class Main {
 
     }
 
-    // public static void listaVeiculos(){
-    //     for(Veiculo veiculo: listaVeiculo.getVeiculos()){
-    //         System.out.println(veiculo.toString());
-    //     }
-    // }
+    public static void listaMotoristasLivres(){
+        for(Motorista motorista: listaFretamento.getMotoristasLivres(listaFuncionario)){
+            System.out.println(motorista.toString());
+        }
+    }
+
+    public static void listaVeiculosLivres(){
+        for(Veiculo veiculo: listaFretamento.getVeiculoLivres(listaVeiculo)){
+            System.out.println(veiculo.toString());
+        }
+    }
 
     // public static void buscaVeiculo(){
     //     System.out.println("Digite a placa do veículo desejado:");

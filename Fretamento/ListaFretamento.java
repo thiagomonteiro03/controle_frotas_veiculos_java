@@ -1,20 +1,15 @@
 package Fretamento;
 
-import java.text.DateFormat;
 import java.time.LocalDate;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
-
-import javax.swing.plaf.synth.SynthScrollBarUI;
 
 import Funcionario.Funcionario;
 import Funcionario.ListaFuncionario;
 import Funcionario.Motorista;
 import Veiculo.ListaVeiculo;
 import Veiculo.Veiculo;
-import jdk.jshell.execution.Util;
 
 import java.time.format.DateTimeFormatter;
 
@@ -97,8 +92,34 @@ public class ListaFretamento {
         }
     }
 
-    public List<Fretamento> getFretamentos(){
-        Collections.sort(listaFretamento);
+    public List<Motorista> getMotoristasLivres(ListaFuncionario listaFuncionario){
+        List<Motorista> lista = new LinkedList<>();
+        for(Funcionario funcionario : listaFuncionario.getFuncionarios()){
+            if(funcionario instanceof Motorista){
+                Motorista motorista = (Motorista) funcionario;
+                lista.add(motorista);
+                if(getListaFretamento()!=null || getListaFretamento().isEmpty()){
+                for(Fretamento fretamento : getListaFretamento()){
+                    if( fretamento.getCondutor()==motorista) lista.remove(motorista);
+                }
+            }
+            }
+        }
+        return lista;
+    }
+
+    public List<Veiculo> getVeiculoLivres(ListaVeiculo listaVeiculo){
+        List<Veiculo> lista = new LinkedList<>();
+        for(Veiculo veiculo : listaVeiculo.getVeiculos()){
+            lista.add(veiculo);
+                for(Fretamento fretamento: getListaFretamento()){
+                    if(fretamento.getVeiculo().equals(veiculo)) lista.remove(veiculo);
+                }
+            }
+        return lista;
+    }
+
+    public List<Fretamento> getListaFretamento() {
         return listaFretamento;
     }
 
