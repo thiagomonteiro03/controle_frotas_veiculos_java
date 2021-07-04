@@ -33,33 +33,43 @@ public class Main {
             }
             case 2: {
                 listaFuncionarios();
+                break;
             }
             case 3: {
                 buscaFuncionario();
+                break;
             }
             case 4: {
                 cadastraVeiculo();
+                break;
             }
             case 5: {
                 listaVeiculos();
+                break;
             }
             case 6: {
                 buscaVeiculo();
+                break;
             }
             case 7: {
                 cadastraFretamento();
+                break;
             }
             case 8: {
                 listaMotoristasLivres();
+                break;
             }
             case 9: {
                 listaVeiculosLivres();
+                break;
             }
             case 10: {
                 listaHistoricoFretamento();
+                break;
             }
             case 11: {
                 listaFretamentosMaisLucrativos();
+                break;
             }
             default:{
                 opcao = 99;

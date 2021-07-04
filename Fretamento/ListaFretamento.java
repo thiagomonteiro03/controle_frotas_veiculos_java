@@ -129,7 +129,7 @@ public class ListaFretamento {
             maisLucrativos.add(fretamento);
             if(maisLucrativos.size()==5) return maisLucrativos;
         }
-        return null;
+        return maisLucrativos;
     }
 
     public LocalDate dataFormatt(String data){
