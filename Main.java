@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+import Fretamento.ListaFretamento;
 import Funcionario.Funcionario;
 import Funcionario.ListaFuncionario;
 import Veiculo.ListaVeiculo;
@@ -10,6 +11,7 @@ public class Main {
     static Scanner in = new Scanner(System.in);
     static ListaFuncionario listaFuncionario = new ListaFuncionario();
     static ListaVeiculo listaVeiculo = new ListaVeiculo();
+    static ListaFretamento listaFretamento = new ListaFretamento();
 
     public static void main(String[] args){
         int opcao;
@@ -39,8 +41,12 @@ public class Main {
             case 5: {
                 listaVeiculos();
             }
-            case 6: {}
-            case 7: {}
+            case 6: {
+                buscaVeiculo();
+            }
+            case 7: {
+                cadastraFretamento();
+            }
             case 8: {}
             case 9: {}
             case 10: {}
@@ -101,5 +107,28 @@ public class Main {
         listaVeiculo.buscaVeiculo(placaVeiculo.hashCode());
 
     }
+
+    // Métodos de Fretamento.
+
+    public static void cadastraFretamento(){
+        System.out.println("Digite o tipo de fretamento de veiculo:");
+        System.out.println("1 - Onibus/vans.\n2 - Utilitários/caminhões");
+        int tipoFretamento = Integer.parseInt(in.nextLine());
+        listaFretamento.cadastraFretamento(tipoFretamento, listaVeiculo, listaFuncionario);
+
+    }
+
+    // public static void listaVeiculos(){
+    //     for(Veiculo veiculo: listaVeiculo.getVeiculos()){
+    //         System.out.println(veiculo.toString());
+    //     }
+    // }
+
+    // public static void buscaVeiculo(){
+    //     System.out.println("Digite a placa do veículo desejado:");
+    //     String placaVeiculo = in.nextLine();
+    //     listaVeiculo.buscaVeiculo(placaVeiculo.hashCode());
+
+    // }
 
 }
