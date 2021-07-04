@@ -1,5 +1,6 @@
 package Veiculo;
-public class Veiculo
+
+public class Veiculo implements Comparable<Veiculo>
 {
    private String numeroPlaca;
    private String modeloVeiculo;
@@ -48,8 +49,18 @@ public void setPesoVeiculo(double pesoVeiculo) {
 }
 
 @Override
-public String toString() {
-    return "Veiculo [anoFabricacao=" + anoFabricacao + ", modeloVeiculo=" + modeloVeiculo + ", numeroPlaca="
+    public int compareTo(Veiculo outro) {
+        return new Integer(anoFabricacao).compareTo(new Integer(outro.getAnoFabricacao()));
+}
+
+@Override
+    public int hashCode() {
+        return numeroPlaca.hashCode();
+    }
+
+@Override
+    public String toString() {
+        return "Veiculo [anoFabricacao=" + anoFabricacao + ", modeloVeiculo=" + modeloVeiculo + ", numeroPlaca="
             + numeroPlaca + ", pesoVeiculo=" + pesoVeiculo + "]";
 }
 

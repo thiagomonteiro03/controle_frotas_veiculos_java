@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter;
 
 public class ListaFuncionario {
     Scanner in = new Scanner(System.in);
-    private List<Funcionario> funcionariosLista = new LinkedList<>();
+    private List<Funcionario> listaFuncionario = new LinkedList<>();
 
 
     public void cadastraFuncionario(int tipoFuncionario){
@@ -31,7 +31,7 @@ public class ListaFuncionario {
                 System.out.println("Digite o cpf(apenas números):");
                 cpf = in.nextLine();
                 Funcionario admFuncionario = new Administrador(nome, dataNascimento, cpf);
-                funcionariosLista.add(admFuncionario);
+                listaFuncionario.add(admFuncionario);
                 System.out.println("Funcionário Administrador cadastrado com sucesso!");
                 break;
             }
@@ -49,7 +49,7 @@ public class ListaFuncionario {
                 System.out.println("Digite a data de vencimento da CNH:");
                 dataVencimentoCnh = dataFormatt(in.nextLine());
                 Funcionario manobristaFuncionario = new Manobrista(nome, dataNascimento, cpf, numeroCnh, categoriaCnh, dataVencimentoCnh);
-                funcionariosLista.add(manobristaFuncionario);
+                listaFuncionario.add(manobristaFuncionario);
                 System.out.println("Funcionário Manobrista cadastrado com sucesso!");
                 break;
             }
@@ -81,7 +81,7 @@ public class ListaFuncionario {
                             else break;
                 transportePassageiro = transportaPassageiro;
                 Funcionario motoristaFuncionario = new Motorista(nome, dataNascimento, cpf, numeroCnh, categoriaCnh, dataVencimentoCnh, cargaPerigosa, transportaPassageiro);
-                funcionariosLista.add(motoristaFuncionario);
+                listaFuncionario.add(motoristaFuncionario);
                 System.out.println("Funcionário Motorista cadastrado com sucesso!");
                 break;
             }
@@ -90,12 +90,12 @@ public class ListaFuncionario {
     }
 
     public List<Funcionario> getFuncionarios(){
-        Collections.sort(funcionariosLista);
-        return funcionariosLista;
+        Collections.sort(listaFuncionario);
+        return listaFuncionario;
     }
 
     public Funcionario buscaFuncionario(int hashCodeCPF){
-        for(Funcionario funcionario : funcionariosLista){
+        for(Funcionario funcionario : listaFuncionario){
             if(funcionario.hashCode() == hashCodeCPF){
                 System.out.println(funcionario.toString());
                 return funcionario;

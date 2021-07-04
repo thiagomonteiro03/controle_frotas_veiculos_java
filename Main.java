@@ -2,11 +2,14 @@ import java.util.Scanner;
 
 import Funcionario.Funcionario;
 import Funcionario.ListaFuncionario;
+import Veiculo.ListaVeiculo;
+import Veiculo.Veiculo;
 
 public class Main {
 
     static Scanner in = new Scanner(System.in);
-    static ListaFuncionario funcionariosLista = new ListaFuncionario();
+    static ListaFuncionario listaFuncionario = new ListaFuncionario();
+    static ListaVeiculo listaVeiculo = new ListaVeiculo();
 
     public static void main(String[] args){
         int opcao;
@@ -30,8 +33,12 @@ public class Main {
             case 3: {
                 buscaFuncionario();
             }
-            case 4: {}
-            case 5: {}
+            case 4: {
+                cadastraVeiculo();
+            }
+            case 5: {
+                listaVeiculos();
+            }
             case 6: {}
             case 7: {}
             case 8: {}
@@ -49,16 +56,18 @@ public class Main {
         
     }
 
+    // Métodos de Funcionário.
+
     public static void cadastraFuncionario(){
         System.out.println("Digite o tipo de funcionário de cadastro:");
         System.out.println("1 - Funcionário Administrativo.\n2 - Funcionário Manobrista\n3 - Funcionário Motorista");
         int tipoFuncionario = Integer.parseInt(in.nextLine());
-        funcionariosLista.cadastraFuncionario(tipoFuncionario);
+        listaFuncionario.cadastraFuncionario(tipoFuncionario);
 
     }
 
     public static void listaFuncionarios(){
-        for(Funcionario funcionario: funcionariosLista.getFuncionarios()){
+        for(Funcionario funcionario: listaFuncionario.getFuncionarios()){
             System.out.println(funcionario.toString());
         }
     }
@@ -66,7 +75,30 @@ public class Main {
     public static void buscaFuncionario(){
         System.out.println("Digite o CPF do funcionário desejado: (apenas numero)");
         String cpfFuncionario = in.nextLine();
-        funcionariosLista.buscaFuncionario(cpfFuncionario.hashCode());
+        listaFuncionario.buscaFuncionario(cpfFuncionario.hashCode());
+
+    }
+
+    // Métodos de Veículo.
+
+    public static void cadastraVeiculo(){
+        System.out.println("Digite o tipo de veículo de cadastro:");
+        System.out.println("1 - Passeio Utilitário.\n2 - Transporte de Passageiro\n3 - Transporte de Carga");
+        int tipoVeiculo = Integer.parseInt(in.nextLine());
+        listaVeiculo.cadastraVeiculo(tipoVeiculo);
+
+    }
+
+    public static void listaVeiculos(){
+        for(Veiculo veiculo: listaVeiculo.getVeiculos()){
+            System.out.println(veiculo.toString());
+        }
+    }
+
+    public static void buscaVeiculo(){
+        System.out.println("Digite a placa do veículo desejado:");
+        String placaVeiculo = in.nextLine();
+        listaVeiculo.buscaVeiculo(placaVeiculo.hashCode());
 
     }
 
