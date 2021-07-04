@@ -123,12 +123,11 @@ public class ListaFretamento {
         return listaFretamento;
     }
 
-    public Fretamento buscaFretamento(int hashCodeCPF){
+    public List<Fretamento> getFretamentosMaisLucrativos (){
+        List<Fretamento> maisLucrativos = new LinkedList<>();
         for(Fretamento fretamento : listaFretamento){
-            if(fretamento.hashCode() == hashCodeCPF){
-                System.out.println(fretamento.toString());
-                return fretamento;
-            }
+            maisLucrativos.add(fretamento);
+            if(maisLucrativos.size()==5) return maisLucrativos;
         }
         return null;
     }

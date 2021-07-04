@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import Funcionario.Motorista;
 import Veiculo.Veiculo;
 
-public class Fretamento {
+public class Fretamento implements Comparable<Fretamento>{
 
     private int idFretamento;
     private Veiculo veiculo;
@@ -79,6 +79,16 @@ public class Fretamento {
 
     public void setValorCobrado(double valorCobrado) {
         this.valorCobrado = valorCobrado;
+    }
+
+    @Override
+    public int compareTo(Fretamento outro) {
+        if (this.valorCobrado > outro.getValorCobrado()) { 
+            return -1; 
+            } if (this.valorCobrado < outro.getValorCobrado()) { 
+            return 1; 
+            } 
+            return 0;
     }
 
     

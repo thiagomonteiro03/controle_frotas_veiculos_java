@@ -55,8 +55,12 @@ public class Main {
             case 9: {
                 listaVeiculosLivres();
             }
-            case 10: {}
-            case 11: {}
+            case 10: {
+                listaHistoricoFretamento();
+            }
+            case 11: {
+                listaFretamentosMaisLucrativos();
+            }
             default:{
                 opcao = 99;
                 break;
@@ -136,11 +140,16 @@ public class Main {
         }
     }
 
-    // public static void buscaVeiculo(){
-    //     System.out.println("Digite a placa do veículo desejado:");
-    //     String placaVeiculo = in.nextLine();
-    //     listaVeiculo.buscaVeiculo(placaVeiculo.hashCode());
+    public static void listaHistoricoFretamento(){
+        for(Fretamento fretamento: listaFretamento.getListaFretamento()){
+            System.out.println(fretamento.toString());
+        }
+    }
 
-    // }
+    public static void listaFretamentosMaisLucrativos(){
+        for(Fretamento fretamento: listaFretamento.getFretamentosMaisLucrativos()){
+            System.out.println(fretamento.toString());
+        }
+    }
 
 }
