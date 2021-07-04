@@ -1,3 +1,4 @@
+package Veiculo;
 public class Veiculo
 {
    private String numeroPlaca;

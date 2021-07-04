@@ -1,11 +1,13 @@
+package Funcionario;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-public class  Funcionario {
+public abstract class  Funcionario {
 
     private String nome;
     private LocalDate dataNascimento;
     private String cpf;
-    private String numeroCnh;
+    private String numeroCnh;   
     private String categoriaCnh;
     private LocalDate dataVencimentoCnh;
 
@@ -72,5 +74,9 @@ public class  Funcionario {
     public void setDataVencimentoCnh(LocalDate dataVencimentoCnh) {
         this.dataVencimentoCnh = dataVencimentoCnh;
     }
-    
+
+    @Override
+    public int hashCode() {
+        return cpf.hashCode();
+    }
 }

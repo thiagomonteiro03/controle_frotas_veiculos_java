@@ -1,3 +1,4 @@
+package Veiculo;
 public class TransporteCarga extends Veiculo {
 
     private double capacidadeCarga;

@@ -1,4 +1,8 @@
+package Fretamento;
 import java.time.LocalDate;
+
+import Funcionario.Motorista;
+import Veiculo.Veiculo;
 
 public class UtilitariosCaminhoes extends Fretamento {
 

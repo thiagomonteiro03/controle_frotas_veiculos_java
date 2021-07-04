@@ -1,3 +1,4 @@
+package Veiculo;
 public class TransportePassageiro extends Veiculo {
 
     private int maxPassageiro;
