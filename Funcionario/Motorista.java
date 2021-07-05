@@ -32,7 +32,9 @@ public class Motorista extends Funcionario {
 
     @Override
     public String toString() {
-        return super.toString() + "Motorista [cargaPerigosa=" + cargaPerigosa + ", transportePassageiro=" + transportePassageiro + "]";
+        return "Motorista [categoriaCnh=" + super.getCategoriaCnh() + ", cpf=" + super.getCpf() + ", dataNascimento=" + super.getCpf()
+        + ", dataVencimentoCnh=" + super.getDataVencimentoCnh() + ", nome=" + super.getNome() + ", numeroCnh=" + super.getNumeroCnh() +
+         "cargaPerigosa=" + cargaPerigosa + ", transportePassageiro=" + transportePassageiro + "]";
     }
     
 }

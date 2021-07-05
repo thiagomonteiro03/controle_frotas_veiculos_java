@@ -190,9 +190,15 @@ public class ListaFretamento {
                 if(numPassageiros<=8 && veiculo.getPesoVeiculo()<=3500) return true;
                 break;
             }
-            case "D": {
-                return true;
+            case "C": {
+                if(numPassageiros<=8) return true;
+                break;
             }
+
+            case "D": return true;
+
+            case "E": return true;
+        
             default: return false;
         }
         return false;

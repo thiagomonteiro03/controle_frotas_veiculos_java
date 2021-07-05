@@ -24,7 +24,9 @@ public class UtilitariosCaminhoes extends Fretamento {
 
     @Override
     public String toString() {
-        return super.toString() + "UtilitariosCaminhoes [cargaPerigosa=" + cargaPerigosa + "]";
+        return "UtilitariosCaminhoes [condutor=" + super.getCondutor() + ", dataInicio=" + super.getDataInicio() + ", dataTermino=" + super.getDataTermino()
+        + ", distancia=" + super.getDistancia() + ", idFretamento=" + super.getIdFretamento() + ", valorCobrado=" + super.getValorCobrado()
+        + ", veiculo=" + super.getVeiculo() + ", cargaPerigosa=" + cargaPerigosa + "]";
     }
     
 }

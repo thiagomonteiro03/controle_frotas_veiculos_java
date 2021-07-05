@@ -12,4 +12,11 @@ public class OnibusVans extends Fretamento {
         super(idFretamento, veiculo, condutor, dataInicio, dataTermino, distancia, valorCobrado);
     }
 
+    @Override
+    public String toString() {
+        return "OnibusVans [condutor=" + super.getCondutor() + ", dataInicio=" + super.getDataInicio() + ", dataTermino=" + super.getDataTermino()
+        + ", distancia=" + super.getDistancia() + ", idFretamento=" + super.getIdFretamento() + ", valorCobrado=" + super.getValorCobrado()
+        + ", veiculo=" + super.getVeiculo() + "]";
+    }
+
 }
