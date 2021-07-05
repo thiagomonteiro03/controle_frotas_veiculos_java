@@ -19,7 +19,8 @@ public class TransportePassageiro extends Veiculo {
 
     @Override
     public String toString() {
-        return super.toString() + "TransportePassageiro [maxPassageiro=" + maxPassageiro + "]";
+        return "TransportePassageiro [anoFabricacao=" + super.getAnoFabricacao() + ", modeloVeiculo=" + super.getModeloVeiculo() + ", numeroPlaca="
+        + super.getNumeroPlaca() + ", pesoVeiculo=" + super.getPesoVeiculo() + "maxPassageiro=" + maxPassageiro + "]";
     }
     
 }
