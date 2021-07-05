@@ -171,12 +171,7 @@ public class ListaFretamento {
     }
 
     public List<Fretamento> getFretamentosMaisLucrativos (){
-        List<Fretamento> maisLucrativos = new LinkedList<>();
-        for(Fretamento fretamento : listaFretamento){
-            maisLucrativos.add(fretamento);
-            if(maisLucrativos.size()==5) return maisLucrativos;
-        }
-        return maisLucrativos;
+        return listaFretamento;
     }
 
     public double getValorCobradoPassageiros(Veiculo veiculo, LocalDate dataInicio, LocalDate dataTermino, double distancia, int numPassageiros){
