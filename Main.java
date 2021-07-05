@@ -157,8 +157,11 @@ public class Main {
     }
 
     public static void listaFretamentosMaisLucrativos(){
+        int cont = 0;
         for(Fretamento fretamento: listaFretamento.getFretamentosMaisLucrativos()){
             System.out.println(fretamento.toString());
+            cont++;
+            if(cont==5) return;
         }
     }
 
