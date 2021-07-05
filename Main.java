@@ -18,7 +18,7 @@ public class Main {
     public static void main(String[] args){
         int opcao;
         do{
-        System.out.println("Bem vindo ao TF Transportadora!\nDigite o numero da funcionalidade desejada:");
+        System.out.println("\n\n\nBem vindo ao TF Transportadora!\nDigite o numero da funcionalidade desejada:");
         System.out.println("Funcionários:\n1 - Cadastrar Funcionário\n2 - Listar funcionários em ordem alfabética\n3 - Buscar funcionário por CPF");
         System.out.println("Veículos:\n4 - Cadastrar veículo\n5 - Listar veículos em ordem de ano de fabricação\n6 - Buscar veículo por placa");
         System.out.println("Fretamentos:\n7 - Cadastrar fretamento de veículo\n8 - Listar motoristas livres\n9 - Listar veículos livres");

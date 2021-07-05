@@ -36,27 +36,43 @@ public class ListaFretamento {
                 System.out.println("Digite a placa do veículo do fretamento(sem hífen):");
                 String placa = in.nextLine();
                 veiculo = listaVeiculo.buscaVeiculo(placa.hashCode());
-                boolean veiculoTransporteCarga = veiculo instanceof TransportePassageiro;
-                if(!veiculoTransporteCarga) break;
+                boolean veiculoTransportePassageiro = veiculo instanceof TransportePassageiro;
+                if(!veiculoTransportePassageiro){
+                    System.out.println("Veículo informado não é Transporte de Passageiro. \nFavor digitar qualquer numero para retornar ao menu inicial.");
+                    in.nextLine();
+                    break;
+                }
                 System.out.println("Digite o cpf do condutor:");
                 String cpf = in.nextLine();
                 Funcionario funcionario = listaFuncionario.buscaFuncionario(cpf.hashCode());
                 Motorista motorista = null;
                 if(funcionario instanceof Motorista){
                     motorista = (Motorista) funcionario;
-                }else break;
-                if(!motorista.temCursoTransportePassageiro()) break;
+                }else {
+                    System.out.println("Funcionário informado não é Motorista. \nFavor digitar qualquer numero para retornar ao menu inicial.");
+                    in.nextLine();
+                    break;
+                }
+                if(!motorista.temCursoTransportePassageiro()){
+                    System.out.println("Motorista não possui curso para transporte de passageiro. \nFavor digitar qualquer numero para retornar ao menu inicial.");
+                    in.nextLine();
+                    break;
+                } 
                 condutor = motorista;
                 System.out.println("Digite a quantidade de passageiros:");
                 int numPassageiros = Integer.parseInt(in.nextLine());
-                System.out.println("Digite a data de início:");
+                System.out.println("Digite a data de início:(ex: DD/MM/AAAA)");
                 dataInicio = dataFormatt(in.nextLine());
-                System.out.println("Digite a data do término:");
+                System.out.println("Digite a data do término:(ex: DD/MM/AAAA)");
                 dataTermino = dataFormatt(in.nextLine());
                 System.out.println("Digite a distancia em Km:(Ex: 22.7)");
                 distancia = Double.parseDouble(in.nextLine());
                 valorCobrado = getValorCobradoPassageiros(veiculo, dataInicio, dataTermino, distancia, numPassageiros);
-                if(!validaCnhPassageiros(veiculo, numPassageiros, motorista)) break;
+                if(!validaCnhPassageiros(veiculo, numPassageiros, motorista)){
+                    System.out.println("CNH não é válida para a operação. \nFavor digitar qualquer numero para retornar ao menu inicial.");
+                    in.nextLine();
+                    break;
+                }
                 idFretamento++;
                 Fretamento onibusVans = new OnibusVans(idFretamento, veiculo, condutor, dataInicio, dataTermino, distancia, valorCobrado);
                 listaFretamento.add(onibusVans);
@@ -68,19 +84,31 @@ public class ListaFretamento {
                 String placa = in.nextLine();
                 veiculo = listaVeiculo.buscaVeiculo(placa.hashCode());
                 boolean veiculoTransporteCarga = veiculo instanceof TransporteCarga;
-                if(!veiculoTransporteCarga) break;
+                if(!veiculoTransporteCarga){
+                    System.out.println("Veiculo não é Transporte de Carga. \nFavor digitar qualquer numero para retornar ao menu inicial.");
+                    in.nextLine();
+                    break;
+                } 
                 System.out.println("Digite o cpf do condutor:");
                 String cpf = in.nextLine();
                 Funcionario funcionario = listaFuncionario.buscaFuncionario(cpf.hashCode());
                 Motorista motorista = null;
                 if(funcionario instanceof Motorista){
                     motorista = (Motorista) funcionario;
-                }else break;
-                if(!motorista.temCursoCargaPerigosa()) break;
+                }else {
+                    System.out.println("Funcionário não é motorista. \nFavor digitar qualquer numero para retornar ao menu inicial.");
+                    in.nextLine();
+                    break;
+                }
+                if(!motorista.temCursoCargaPerigosa()){
+                    System.out.println("Motorista não possui curso para transporte de carga perigosa. \nFavor digitar qualquer numero para retornar ao menu inicial.");
+                    in.nextLine();
+                    break;
+                }
                 condutor = motorista;
-                System.out.println("Digite a data de início:");
+                System.out.println("Digite a data de início:(ex: DD/MM/AAAA)");
                 dataInicio = dataFormatt(in.nextLine());
-                System.out.println("Digite a data do término:");
+                System.out.println("Digite a data do término:(ex: DD/MM/AAAA)");
                 dataTermino = dataFormatt(in.nextLine());
                 System.out.println("Digite a distancia em Km:(Ex: 22.7)");
                 distancia = Double.parseDouble(in.nextLine());
@@ -89,10 +117,18 @@ public class ListaFretamento {
                 boolean possuiCargaPerigosa;
                 if(resposta.equals("1")) possuiCargaPerigosa = true;
                     else if(resposta.equals("0")) possuiCargaPerigosa = false;
-                            else break;
+                            else {
+                                System.out.println("Opção inválida. \nFavor digitar qualquer numero para retornar ao menu inicial.");
+                                in.nextLine();
+                                break;
+                            }
                 cargaPerigosa = possuiCargaPerigosa;
                 valorCobrado = getValorCobradoCarga(cargaPerigosa, distancia, veiculo);
-                if(!validaCnhCarga(veiculo, motorista)) break;
+                if(!validaCnhCarga(veiculo, motorista)){
+                    System.out.println("CNH não é válida para a operação. \nFavor digitar qualquer numero para retornar ao menu inicial.");
+                    in.nextLine();
+                    break;
+                }
                 idFretamento++;
                 Fretamento utilitarioCaminhoes = new UtilitariosCaminhoes(idFretamento, veiculo, condutor, dataInicio, dataTermino, distancia, valorCobrado, cargaPerigosa);
                 listaFretamento.add(utilitarioCaminhoes);

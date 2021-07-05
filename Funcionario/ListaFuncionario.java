@@ -26,7 +26,7 @@ public class ListaFuncionario {
             case 1: {
                 System.out.println("Digite o nome:");
                 nome = in.nextLine();
-                System.out.println("Digite a data de nascimento (ex: 04/04/2004):");
+                System.out.println("Digite a data de nascimento:(ex: DD/MM/AAAA)");
                 dataNascimento = dataFormatt(in.nextLine());
                 System.out.println("Digite o cpf(apenas números):");
                 cpf = in.nextLine();
@@ -38,7 +38,7 @@ public class ListaFuncionario {
             case 2: {
                 System.out.println("Digite o nome:");
                 nome = in.nextLine();
-                System.out.println("Digite a data de nascimento:");
+                System.out.println("Digite a data de nascimento:(ex: DD/MM/AAAA)");
                 dataNascimento = dataFormatt(in.nextLine());
                 System.out.println("Digite o cpf(apenas números):");
                 cpf = in.nextLine();
@@ -46,7 +46,7 @@ public class ListaFuncionario {
                 numeroCnh = in.nextLine();
                 System.out.println("Digite a Categoria da CNH:");
                 categoriaCnh = in.nextLine();
-                System.out.println("Digite a data de vencimento da CNH:");
+                System.out.println("Digite a data de vencimento da CNH:(ex: DD/MM/AAAA)");
                 dataVencimentoCnh = dataFormatt(in.nextLine());
                 if(!validaCnh(categoriaCnh)) break;
                 Funcionario manobristaFuncionario = new Manobrista(nome, dataNascimento, cpf, numeroCnh, categoriaCnh, dataVencimentoCnh);
@@ -57,7 +57,7 @@ public class ListaFuncionario {
             case 3: {
                 System.out.println("Digite o nome:");
                 nome = in.nextLine();
-                System.out.println("Digite a data de nascimento:");
+                System.out.println("Digite a data de nascimento:(ex: DD/MM/AAAA)");
                 dataNascimento = dataFormatt(in.nextLine());
                 System.out.println("Digite o cpf(apenas números):");
                 cpf = in.nextLine();
@@ -66,7 +66,7 @@ public class ListaFuncionario {
                 System.out.println("Digite a Categoria da CNH:");
                 categoriaCnh = in.nextLine();
                 if(!validaCnh(categoriaCnh)) break;
-                System.out.println("Digite a data de vencimento da CNH:");
+                System.out.println("Digite a data de vencimento da CNH:(ex: DD/MM/AAAA)");
                 dataVencimentoCnh = dataFormatt(in.nextLine());
                 System.out.println("Possui curso para cargas perigosas? \n1 - sim \n0 - não:");
                 String escolhaCarga = in.nextLine();
