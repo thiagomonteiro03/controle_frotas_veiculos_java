@@ -48,6 +48,7 @@ public class ListaFuncionario {
                 categoriaCnh = in.nextLine();
                 System.out.println("Digite a data de vencimento da CNH:");
                 dataVencimentoCnh = dataFormatt(in.nextLine());
+                if(!validaCnh(categoriaCnh)) break;
                 Funcionario manobristaFuncionario = new Manobrista(nome, dataNascimento, cpf, numeroCnh, categoriaCnh, dataVencimentoCnh);
                 listaFuncionario.add(manobristaFuncionario);
                 System.out.println("Funcionário Manobrista cadastrado com sucesso!");
@@ -64,6 +65,7 @@ public class ListaFuncionario {
                 numeroCnh = in.nextLine();
                 System.out.println("Digite a Categoria da CNH:");
                 categoriaCnh = in.nextLine();
+                if(!validaCnh(categoriaCnh)) break;
                 System.out.println("Digite a data de vencimento da CNH:");
                 dataVencimentoCnh = dataFormatt(in.nextLine());
                 System.out.println("Possui curso para cargas perigosas? \n1 - sim \n0 - não:");
@@ -102,6 +104,17 @@ public class ListaFuncionario {
             }
         }
         return null;
+    }
+
+    public boolean validaCnh(String cnh){
+        switch(cnh){
+            case "B": break;
+            case "C": break;
+            case "D": break;
+            case "E": break;
+            default: return false;
+        }
+        return true;
     }
 
     public LocalDate dataFormatt(String data){

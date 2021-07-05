@@ -29,7 +29,7 @@ public class TransporteCarga extends Veiculo {
         this.numeroEixo = numeroEixo;
     }
 
-    public boolean isUnidAcoplado() {
+    public boolean temUnidAcoplado() {
         return unidAcoplado;
     }
 

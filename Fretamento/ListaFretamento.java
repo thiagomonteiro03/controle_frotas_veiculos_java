@@ -56,6 +56,7 @@ public class ListaFretamento {
                 System.out.println("Digite a distancia em Km:(Ex: 22.7)");
                 distancia = Double.parseDouble(in.nextLine());
                 valorCobrado = getValorCobradoPassageiros(veiculo, dataInicio, dataTermino, distancia, numPassageiros);
+                if(!validaCnhPassageiros(veiculo, numPassageiros, motorista)) break;
                 idFretamento++;
                 Fretamento onibusVans = new OnibusVans(idFretamento, veiculo, condutor, dataInicio, dataTermino, distancia, valorCobrado);
                 listaFretamento.add(onibusVans);
@@ -91,6 +92,7 @@ public class ListaFretamento {
                             else break;
                 cargaPerigosa = possuiCargaPerigosa;
                 valorCobrado = getValorCobradoCarga(cargaPerigosa, distancia, veiculo);
+                if(!validaCnhCarga(veiculo, motorista)) break;
                 idFretamento++;
                 Fretamento utilitarioCaminhoes = new UtilitariosCaminhoes(idFretamento, veiculo, condutor, dataInicio, dataTermino, distancia, valorCobrado, cargaPerigosa);
                 listaFretamento.add(utilitarioCaminhoes);
@@ -181,6 +183,36 @@ public class ListaFretamento {
             
         return valor;
     }
+
+    public boolean validaCnhPassageiros(Veiculo veiculo, int numPassageiros, Motorista motorista){
+        switch(motorista.getCategoriaCnh()){
+            case "B": {
+                if(numPassageiros<=8 && veiculo.getPesoVeiculo()<=3500) return true;
+                break;
+            }
+            case "D": {
+                return true;
+            }
+            default: return false;
+        }
+        return false;
+    }
+
+    public boolean validaCnhCarga(Veiculo veiculo, Motorista motorista){
+        TransporteCarga veiculoCarga = (TransporteCarga)veiculo;
+        switch(motorista.getCategoriaCnh()){
+            case "C": {
+                if(veiculo.getPesoVeiculo()<=6000 && !veiculoCarga.temUnidAcoplado()) return true;
+                break;
+            }
+            case "E": {
+                return true;
+            }
+            default: return false;
+        }
+        return false;
+    }
+
 
     public LocalDate dataFormatt(String data){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
