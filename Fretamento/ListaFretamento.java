@@ -179,7 +179,7 @@ public class ListaFretamento {
         double valor = 0;
         double valorDiaria = 0;
         double valorKm = 0;
-        double diasAlugados = ChronoUnit.DAYS.between(dataTermino, dataInicio);
+        double diasAlugados = ChronoUnit.DAYS.between(dataInicio, dataTermino);
         if(veiculo instanceof TransportePassageiro){
             veiculoPassageiro = (TransportePassageiro)veiculo;
         } else return 0;
