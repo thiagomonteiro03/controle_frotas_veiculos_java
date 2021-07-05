@@ -1,6 +1,8 @@
 package Fretamento;
 
 import java.time.LocalDate;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -171,6 +173,7 @@ public class ListaFretamento {
     }
 
     public List<Fretamento> getFretamentosMaisLucrativos (){
+        Collections.sort(listaFretamento);
         return listaFretamento;
     }
 
