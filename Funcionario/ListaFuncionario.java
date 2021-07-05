@@ -30,6 +30,13 @@ public class ListaFuncionario {
                 dataNascimento = dataFormatt(in.nextLine());
                 System.out.println("Digite o cpf(apenas números):");
                 cpf = in.nextLine();
+                if(cpf.length() != 11){
+                    System.out.println("CPF não possui 11 digitos. \nFavor digitar qualquer numero para retornar ao menu inicial.");
+                    in.nextLine();
+                    break;
+                }
+                System.out.println(cpf);
+                in.nextLine();
                 Funcionario admFuncionario = new Administrador(nome, dataNascimento, cpf);
                 listaFuncionario.add(admFuncionario);
                 System.out.println("Funcionário Administrador cadastrado com sucesso!");

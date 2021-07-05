@@ -50,7 +50,12 @@ public void setPesoVeiculo(double pesoVeiculo) {
 
 @Override
     public int compareTo(Veiculo outro) {
-        return new Integer(anoFabricacao).compareTo(new Integer(outro.getAnoFabricacao()));
+        if (this.anoFabricacao > outro.getAnoFabricacao()) { 
+            return -1; 
+            } if (this.anoFabricacao < outro.getAnoFabricacao()) { 
+            return 1; 
+            } 
+            return 0;
 }
 
 @Override
