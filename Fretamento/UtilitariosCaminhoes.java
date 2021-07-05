@@ -21,7 +21,10 @@ public class UtilitariosCaminhoes extends Fretamento {
     public void setCargaPerigosa(boolean cargaPerigosa) {
         this.cargaPerigosa = cargaPerigosa;
     }
-    
 
+    @Override
+    public String toString() {
+        return super.toString() + "UtilitariosCaminhoes [cargaPerigosa=" + cargaPerigosa + "]";
+    }
     
 }

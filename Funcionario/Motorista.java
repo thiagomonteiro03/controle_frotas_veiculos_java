@@ -14,7 +14,7 @@ public class Motorista extends Funcionario {
         this.transportePassageiro = transportePassageiro;
     }
 
-    public boolean isCargaPerigosa() {
+    public boolean temCursoCargaPerigosa() {
         return cargaPerigosa;
     }
 
@@ -22,7 +22,7 @@ public class Motorista extends Funcionario {
         this.cargaPerigosa = cargaPerigosa;
     }
 
-    public boolean isTransportePassageiro() {
+    public boolean temCursoTransportePassageiro() {
         return transportePassageiro;
     }
 

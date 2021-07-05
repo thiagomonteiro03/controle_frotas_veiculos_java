@@ -91,5 +91,12 @@ public class Fretamento implements Comparable<Fretamento>{
             return 0;
     }
 
+    @Override
+    public String toString() {
+        return "Fretamento [condutor=" + condutor + ", dataInicio=" + dataInicio + ", dataTermino=" + dataTermino
+                + ", distancia=" + distancia + ", idFretamento=" + idFretamento + ", valorCobrado=" + valorCobrado
+                + ", veiculo=" + veiculo + "]";
+    }
+
     
 }
